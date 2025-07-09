@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mychart
+  namespace: flux-system
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: ./apps/mychart            # 👈 path to chart in repo
+      sourceRef:
+        kind: GitRepository
+        name: fluxtest
+        namespace: flux-system

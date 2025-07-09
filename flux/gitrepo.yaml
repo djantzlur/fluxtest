@@ -1,10 +1,11 @@
+# flux/gitrepo.yaml
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: fluxtest
   namespace: flux-system
 spec:
-  interval: 30s
+  interval: 1m0s
   url: https://github.com/djantzlur/fluxtest
   ref:
     branch: main
