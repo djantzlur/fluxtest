@@ -5,4 +5,4 @@ metadata:
   namespace: flux-system
 spec:
   type: generic
-  address: http://alert.flux-system.svc.cluster.local:8080/
+  address: http://alert-service.flux-system.svc.cluster.local:5000/ping

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flask-app-code
+data:
+  app.py: |
+    from flask import Flask
+    import logging
+    logging.basicConfig(level=logging.INFO,format='%(asctime)s %(name)s %(levelname)s:%(message)s')
+    logs = logging.getLogger('fluxTest')
+    app = Flask(__name__)
+
+    @app.route('/ping', methods=['GET','POST'])
+    def ping():
+        logs.info(f'test - {request.method}')
+        return f'test - {request.method}', 200
+
+    if __name__ == '__main__':
+        app.run(host='0.0.0.0', port=5000)
+
