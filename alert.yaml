@@ -1,0 +1,13 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: flux-alert
+  namespace: flux-system
+spec:
+  providerRef:
+    name: test-webhook
+  eventSeverity: info
+  eventSources:
+    - kind: Kustomization
+      name: nginx
+
