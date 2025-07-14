@@ -5,4 +5,4 @@ metadata:
   namespace: flux-system
 spec:
   type: generic
-  address: https://webhook.site/19302ebe-383d-411c-8937-8bc9d71190ff
+  address: http://alert.flux-system.svc.cluster.local:8080/
